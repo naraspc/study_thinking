@@ -4,15 +4,15 @@ import com.example.JWProject_1.entity.Article;
 import lombok.AllArgsConstructor;
 import lombok.ToString;
 
-@AllArgsConstructor
-@ToString
+@AllArgsConstructor // 생성자 자동생성
+@ToString // 투스트링 자동생성
 public class ArticleForm {
 
-    public Article toEntity() {
-        return new Article(null, title, content);
+    public Article toEntity() { // DTO를 ENTITY로 변환
+        return new Article(null, title, content); // ENTITY
     }
 
     private String title;
-        private String content;
+    private String content;
 
 }
