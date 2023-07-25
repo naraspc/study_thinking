@@ -10,17 +10,20 @@
     </tr>
     </thead>
     <tbody>
-    {{#article}} {{!모델에 등록된 데이터 가져오기}}
+    {{#articleList}} {{!모델에 등록된 데이터 가져오기}}
         <tr>
             <th>{{id}}</th> {{!데이터}}
-            <td>{{title}}</td>
+            <td><a href="/articles/{{id}}">{{title}}</a></td> {{!Title에 링크, 상세페이지로 이동}}
             <td>{{content}}</td>
             <td></td>
         </tr>
-    {{/article}}
+    {{/articleList}}
     </tbody>
 </table>
 
-<a href="/articles">Back articles</a> {{!메인페이지로 이동}}
+<a href="/articles/new">New Article</a> {{! 데이터 생성}}
+
+
+
 
 {{>layouts/footer}}

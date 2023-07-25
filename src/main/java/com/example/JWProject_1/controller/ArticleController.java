@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.List;
+
 @Controller // 컨트롤러 선언
 @Slf4j //로깅을 위한 어노테이션
 public class ArticleController {
@@ -21,7 +23,7 @@ public class ArticleController {
         return "articles/new"; // new.mustache 리턴
     }
 
-    @PostMapping("/articles/create")
+    @PostMapping("/articles/create") //데이터가 커질 수 있기때문에 Post 방식으로
     public String createArticle(ArticleForm form) { // 컨트롤러에서 받아온 데이터를 DTO로 변환
         log.info(form.toString()); // sysout 보단 log 사용하기.
         // System.out.println(form.toString());
@@ -37,7 +39,7 @@ public class ArticleController {
         Article saved = articleRepository.save(article);
         log.info(saved.toString());
         // System.out.println(saved.toString());
-        return "";
+        return "redirect:/articles/" + saved.getId(); // DTO를 DB에 저장 후 저장한값을 보여주는 페이지로 리다이렉트
 
 
     }
@@ -53,6 +55,16 @@ public class ArticleController {
         // 3: 보여줄 페이지를 설정
         return "articles/show";
 
+    }
+    @GetMapping("/articles")
+    public String index(Model model) {
+
+        // 1: 모든 Article을 가져온다
+        List<Article> articleEntityList = articleRepository.findAll();
+        // 2: 가져온 Article 묶음을 뷰로 전달한다
+        model.addAttribute("articleList", articleEntityList);
+        // 3: 뷰 페이지를 설정한다
+        return "articles/index"; // articles/index.mustache
     }
 
 
