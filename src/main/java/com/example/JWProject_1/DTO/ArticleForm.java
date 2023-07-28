@@ -9,9 +9,9 @@ import lombok.ToString;
 public class ArticleForm {
 
     public Article toEntity() { // DTO를 ENTITY로 변환
-        return new Article(null, title, content); // ENTITY
+        return new Article(id, title, content); // ENTITY
     }
-
+    private Long id;
     private String title;
     private String content;
 

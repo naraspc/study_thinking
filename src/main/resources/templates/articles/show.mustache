@@ -12,7 +12,7 @@
     <tbody>
     {{#article}} {{!모델에 등록된 데이터 가져오기}}
         <tr>
-            <th>{{id}}</th> {{!데이터}}
+            <th>{{id}}</th> {{!PK}}
             <td>{{title}}</td>
             <td>{{content}}</td>
             <td></td>
@@ -22,5 +22,13 @@
 </table>
 
 <a href="/articles">Back articles</a> {{!메인페이지로 이동}}
+<a href="/articles/{{article.id}}/edit" class="btn btn-primary">edit</a> {{!수정하기}}
+
+<form class="container" action="/articles/delete" method="get" id="delete"> {{!삭제를 위한 폼}}
+    <input name="id" type="hidden" value="{{id}}"/>   {{!삭제하기}}
+</form>
+<button type="submit" form="delete" >삭제하기</button>
+
+
 
 {{>layouts/footer}}
