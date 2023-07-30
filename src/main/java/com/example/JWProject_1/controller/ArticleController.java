@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
-@Controller // 컨트롤러 선언
-@Slf4j //로깅을 위한 어노테이션
+    @Controller // 컨트롤러 선언
+    @Slf4j //로깅을 위한 어노테이션
 public class ArticleController {
     @Autowired //type으로 의존성 주입
     private ArticleRepository articleRepository;
@@ -104,13 +104,14 @@ public class ArticleController {
             return "데이터가 존재하지않습니다 수정불가";
         }
     }
+
     @GetMapping("/articles/delete") // url 매핑
     public String delete(long id) { // Primary Key값을 받아서
         log.info("삭제요청이 들어왔습니다");
 
-            articleRepository.deleteById(id); //id 조회해서 동일하면 삭제
-            return "redirect:/articles/";
-        }
+        articleRepository.deleteById(id); //id 조회해서 동일하면 삭제
+        return "redirect:/articles/";
     }
+}
 
 
