@@ -1,6 +1,6 @@
-package com.example.JWProject_1.Repository;
+package com.example.JWProject.Repository;
 
-import com.example.JWProject_1.entity.Article;
+import com.example.JWProject.entity.Article;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.ArrayList;

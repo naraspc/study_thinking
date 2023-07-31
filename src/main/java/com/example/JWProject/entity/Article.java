@@ -1,4 +1,4 @@
-package com.example.JWProject_1.entity;
+package com.example.JWProject.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

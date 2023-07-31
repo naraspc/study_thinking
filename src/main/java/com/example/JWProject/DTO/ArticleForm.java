@@ -1,6 +1,6 @@
-package com.example.JWProject_1.DTO;
+package com.example.JWProject.DTO;
 
-import com.example.JWProject_1.entity.Article;
+import com.example.JWProject.entity.Article;
 import lombok.AllArgsConstructor;
 import lombok.ToString;
 

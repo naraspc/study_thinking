@@ -1,8 +1,6 @@
-package com.example.JWProject_1.controller;
+package com.example.JWProject.controller;
 
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class ArticleControllerTest {
 
