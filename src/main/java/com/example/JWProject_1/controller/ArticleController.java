@@ -4,6 +4,7 @@ import com.example.JWProject_1.DTO.ArticleForm;
 import com.example.JWProject_1.Repository.ArticleRepository;
 import com.example.JWProject_1.entity.Article;
 import lombok.extern.slf4j.Slf4j;
+import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -104,6 +105,7 @@ public class ArticleController {
             return "데이터가 존재하지않습니다 수정불가";
         }
     }
+
 
     @GetMapping("/articles/delete") // url 매핑
     public String delete(long id) { // Primary Key값을 받아서
