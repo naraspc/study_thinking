@@ -4,6 +4,7 @@ package com.RefactoryAndCleanCode;
 import org.junit.Before;
 import org.junit.jupiter.api.Test;
 
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class StringCarculator_refactoryTest {
@@ -18,7 +19,7 @@ class StringCarculator_refactoryTest {
 
     @Test
     void add_null_or_emptyText() {
-        cal = new StringCarculator();
+
         assertEquals (0,cal.add(null));
         assertEquals (0,cal.add(""));
     }
