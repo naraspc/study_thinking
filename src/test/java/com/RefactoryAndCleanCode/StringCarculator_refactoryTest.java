@@ -19,7 +19,7 @@ class StringCarculator_refactoryTest {
 
     @Test
     void add_null_or_emptyText() {
-
+        cal = new StringCarculator();
         assertEquals (0,cal.add(null));
         assertEquals (0,cal.add(""));
     }
