@@ -25,7 +25,7 @@ public class Article {
     private String content; // DB CONTENT
 
 
-    public void patch(Article article) {
+    public void patch(Article article) { //null 버그 해결
         if (article.title != null)
             this.title = article.title;
         if (article.content != null)

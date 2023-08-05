@@ -61,4 +61,19 @@ public class ArticleApiController {
     }
     //DELETE
 
+    @DeleteMapping("/api/articles/{id}")
+    public ResponseEntity<Article> Delete(@PathVariable Long id){
+
+
+        // 대상 엔티티 조회
+        Article target = articleRepository.findById(id).orElse(null);
+
+        // 잘못된 요청 처리(대상이 없거나 id가 다른경우)
+        if (target == null) {
+            log.info("잘못된 요청 ! id: {}", id );
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
+        }
+        articleRepository.deleteById(id);
+        return  ResponseEntity.status(HttpStatus.OK).body(null);
+    }
 }
