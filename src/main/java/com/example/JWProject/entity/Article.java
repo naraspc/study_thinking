@@ -25,5 +25,11 @@ public class Article {
     private String content; // DB CONTENT
 
 
+    public void patch(Article article) {
+        if (article.title != null)
+            this.title = article.title;
+        if (article.content != null)
+            this.content = article.content;
+    }
 
 }
