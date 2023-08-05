@@ -1,11 +1,10 @@
 package com.example.JWProject.api;
 
+import com.example.JWProject.DTO.ArticleForm;
 import com.example.JWProject.Repository.ArticleRepository;
 import com.example.JWProject.entity.Article;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,6 +24,11 @@ public class ArticleApiController {
 
     }
     //POST
+    @PostMapping("/api/articles")
+    public Article Create(@RequestBody ArticleForm dto) { // 전달받은 Json데이터를 DTO로 변환
+        Article article = dto.toEntity(); // DTO를 엔티티로 변환하여 article로 저장
+        return articleRepository.save(article); //aritcle을 db에 저장한다
+    }
 
     //PATCH
 
