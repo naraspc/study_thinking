@@ -8,6 +8,7 @@ import lombok.ToString;
 import javax.persistence.*;
 
 @Entity // 엔티티선언 DB가 인식 할수있게
+
 @AllArgsConstructor // 생성자 자동 추가 어노테이션
 @NoArgsConstructor // 디폴트 생성자 추가 어노테이션
 @ToString // 롬복을 이용한 투스트링 자동 추가 어노테이션

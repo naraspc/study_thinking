@@ -112,7 +112,9 @@ public class ArticleController {
 
         articleRepository.deleteById(id); //id 조회해서 동일하면 삭제
         return "redirect:/articles/";
+
     }
+
 }
 
 

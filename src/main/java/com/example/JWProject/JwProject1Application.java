@@ -10,4 +10,7 @@ public class JwProject1Application {
 		SpringApplication.run(JwProject1Application.class, args);
 	}
 
+
+
 }
+
